@@ -1,3 +1,4 @@
+import { NavbarProvider } from "@/context/NavbarContext";
 import StyledComponentsRegistry from "@/lib/StyledComponentsRegistry";
 import type { Metadata } from "next";
 import { Quicksand, Roboto_Mono } from "next/font/google";
@@ -28,9 +29,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className={`${quicksand.variable} ${roboto.variable}`}>
-      <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-      </body>
+      <NavbarProvider>
+        <body>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </body>
+      </NavbarProvider>
     </html>
   );
 }

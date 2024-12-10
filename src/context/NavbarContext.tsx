@@ -1,17 +1,18 @@
-import { createContext, useState } from "react";
+"use client";
+import { createContext, useContext, useState } from "react";
 
 interface INavBarContext {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const NavbarContext = createContext<INavBarContext>({
+const NavbarContext = createContext<INavBarContext>({
   isOpen: false,
   setIsOpen: () => {},
 });
 
 export const NavbarProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <NavbarContext.Provider value={{ isOpen, setIsOpen }}>
@@ -19,3 +20,5 @@ export const NavbarProvider = ({ children }: { children: React.ReactNode }) => {
     </NavbarContext.Provider>
   );
 };
+
+export const useNavBarContext = () => useContext(NavbarContext);

@@ -1,32 +1,43 @@
-import Image from "next/image";
+"use client";
 import Link from "next/link";
+import {
+  ContainerButtonStyled,
+  ListItemStyled,
+  ListStyled,
+  NavStyled,
+} from "./styled";
+import { IoClose } from "react-icons/io5";
+import { useNavBarContext } from "@/context/NavbarContext";
+import ButtonIcon from "../ButtonIcon";
 
 const Navbar = () => {
+  const { isOpen, setIsOpen } = useNavBarContext();
+
   return (
-    <nav>
-      <ul>
-        <li>
+    <NavStyled $isOpen={isOpen}>
+      <ListStyled $isOpen={isOpen}>
+        <ListItemStyled>
           <Link href="">Home</Link>
-        </li>
-        <li>
+        </ListItemStyled>
+        <ListItemStyled>
           <Link href="">Sobre Mim</Link>
-        </li>
-        <li>
-          <Image
-            src="/assets/logo-portfolio.png"
-            width={100}
-            height={100}
-            alt=""
-          />
-        </li>
-        <li>
+        </ListItemStyled>
+        <ListItemStyled>
+          <Link href="">Habilidades</Link>
+        </ListItemStyled>
+        <ListItemStyled>
           <Link href="">Projetos</Link>
-        </li>
-        <li>
+        </ListItemStyled>
+        <ListItemStyled>
           <Link href="">Contato</Link>
-        </li>
-      </ul>
-    </nav>
+        </ListItemStyled>
+      </ListStyled>
+      <ContainerButtonStyled>
+        <ButtonIcon onClick={() => setIsOpen(!isOpen)}>
+          <IoClose size={40} color="FFF" />
+        </ButtonIcon>
+      </ContainerButtonStyled>
+    </NavStyled>
   );
 };
 

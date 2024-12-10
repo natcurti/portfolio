@@ -1,24 +1,38 @@
+"use client";
 import Image from "next/image";
 import { CgMenuRightAlt } from "react-icons/cg";
-import { ButtonMenuStyled, HeaderStyled } from "./styled";
+import {
+  ContainerButtonStyled,
+  ContainerImgStyled,
+  ContainerLogoStyled,
+  HeaderStyled,
+} from "./styled";
+import { useNavBarContext } from "@/context/NavbarContext";
+import ButtonIcon from "../ButtonIcon";
+import Navbar from "../Navbar";
 
 const Header = () => {
+  const { isOpen, setIsOpen } = useNavBarContext();
+
   return (
     <HeaderStyled>
-      <div>
-        <Image
-          src="/assets/logo-portfolio.png"
-          width={75}
-          height={75}
-          priority
-          alt="Logo portfolio Natalia Curti. Redondo com degrâde azul e roxo e a letra N no centro."
-        />
-      </div>
-      <ButtonMenuStyled>
-        <CgMenuRightAlt size={35} color="FFF" />
-      </ButtonMenuStyled>
-
-      {/* <Navbar /> */}
+      <ContainerLogoStyled>
+        <ContainerImgStyled>
+          <Image
+            src="/assets/logo.png"
+            fill
+            priority
+            alt="Logo portfolio Natalia Curti"
+          />
+        </ContainerImgStyled>
+        <h2>Natalia Curti</h2>
+      </ContainerLogoStyled>
+      <ContainerButtonStyled>
+        <ButtonIcon onClick={() => setIsOpen(!isOpen)}>
+          <CgMenuRightAlt size={35} color="FFF" />
+        </ButtonIcon>
+      </ContainerButtonStyled>
+      <Navbar />
     </HeaderStyled>
   );
 };
