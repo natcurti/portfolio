@@ -5,6 +5,9 @@ export const HeaderStyled = styled.header`
   padding: 1.5rem;
   display: flex;
   justify-content: space-between;
+  position: relative;
+  background-color: var(--dark-navy);
+  z-index: 1;
 
   @media (min-width: 1200px) {
     padding: 2rem 4rem;
