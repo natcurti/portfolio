@@ -1,11 +1,11 @@
 import Header from "@/components/Header";
-import ParticlesBg from "@/components/ParticlesBg";
+import SectionInitial from "@/components/SectionInitial";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <ParticlesBg />
+      <SectionInitial />
     </>
   );
 }
