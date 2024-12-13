@@ -1,0 +1,53 @@
+"use client";
+import styled, { keyframes } from "styled-components";
+
+const blink = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0
+  }
+`;
+
+export const ContainerStyled = styled.div`
+  padding: 2rem;
+`;
+
+export const TitleStyled = styled.h1`
+  margin-bottom: 1rem;
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 1.75rem;
+  background: linear-gradient(to right, #2954a3, #c961de);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+`;
+
+export const SubtitleStyled = styled.h2`
+  margin-bottom: 0.5rem;
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 1.5rem;
+  width: min-content;
+
+  @media (min-width: 400px) {
+    width: auto;
+  }
+`;
+
+export const TextStyled = styled.h3`
+  font-size: 1.25rem;
+  font-weight: 500;
+`;
+
+export const CursorStyled = styled.span`
+  background: linear-gradient(to right, #2954a3, #c961de);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ${blink} 1s infinite;
+  vertical-align: baseline;
+`;
