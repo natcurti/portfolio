@@ -12,6 +12,11 @@ const blink = keyframes`
 
 export const ContainerStyled = styled.div`
   padding: 2rem;
+  width: 100%;
+
+  @media (min-width: 576px) {
+    width: 50%;
+  }
 `;
 
 export const TitleStyled = styled.h1`
@@ -24,6 +29,10 @@ export const TitleStyled = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1;
+
+  @media (min-width: 992px) {
+    font-size: 2.75rem;
+  }
 `;
 
 export const SubtitleStyled = styled.h2`
@@ -36,11 +45,23 @@ export const SubtitleStyled = styled.h2`
   @media (min-width: 400px) {
     width: auto;
   }
+
+  @media (min-width: 676px) and (max-width: 772px) {
+    width: min-content;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 2rem;
+  }
 `;
 
 export const TextStyled = styled.h3`
   font-size: 1.25rem;
   font-weight: 500;
+
+  @media (min-width: 992px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const CursorStyled = styled.span`
