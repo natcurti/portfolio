@@ -49,6 +49,7 @@ export const SubtitleStyled = styled.h2`
   font-weight: 500;
   font-size: 1.5rem;
   width: min-content;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 
   @media (min-width: 400px) {
     width: auto;
@@ -66,6 +67,7 @@ export const SubtitleStyled = styled.h2`
 export const TextStyled = styled.h3`
   font-size: 1.25rem;
   font-weight: 500;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 
   @media (min-width: 400px) {
     font-size: 1.45rem;

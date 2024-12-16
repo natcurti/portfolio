@@ -5,6 +5,11 @@ export const HeaderStyled = styled.header`
   padding: 1.5rem;
   background-color: var(--dark-navy);
   z-index: 1;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   @media (min-width: 768px) {
     display: flex;
