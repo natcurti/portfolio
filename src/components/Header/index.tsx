@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { CgMenuRightAlt } from "react-icons/cg";
 import {
-  ContainerButtonStyled,
+  ContainerHeader,
   ContainerImgStyled,
   ContainerLogoStyled,
   HeaderStyled,
@@ -10,30 +10,35 @@ import {
 import { useNavBarContext } from "@/context/NavbarContext";
 import ButtonIcon from "../ButtonIcon";
 import Navbar from "../Navbar";
+import { IoClose } from "react-icons/io5";
 
 const Header = () => {
   const { isOpen, setIsOpen } = useNavBarContext();
 
   return (
     <HeaderStyled>
-      <ContainerLogoStyled>
-        <ContainerImgStyled>
-          <Image
-            src="/assets/logo.png"
-            fill
-            sizes="(max-width: 992px) 25vw, 10vw"
-            alt="Logo portfolio Natalia Curti"
-            placeholder="blur"
-            blurDataURL={"/assets/logo.png"}
-          />
-        </ContainerImgStyled>
-        <h2>Natalia Curti</h2>
-      </ContainerLogoStyled>
-      <ContainerButtonStyled>
-        <ButtonIcon onClick={() => setIsOpen(!isOpen)}>
-          <CgMenuRightAlt size={35} color="FFF" />
+      <ContainerHeader>
+        <ContainerLogoStyled>
+          <ContainerImgStyled>
+            <Image
+              src="/assets/logo.png"
+              fill
+              sizes="(max-width: 992px) 15vw, 10vw"
+              alt="Logo portfolio Natalia Curti"
+              placeholder="blur"
+              blurDataURL={"/assets/logo.png"}
+            />
+          </ContainerImgStyled>
+          <h2>Natalia Curti</h2>
+        </ContainerLogoStyled>
+        <ButtonIcon onClick={() => setIsOpen(!isOpen)} isMenuBtn>
+          {isOpen ? (
+            <IoClose size={40} color="FFF" />
+          ) : (
+            <CgMenuRightAlt size={35} color="FFF" />
+          )}
         </ButtonIcon>
-      </ContainerButtonStyled>
+      </ContainerHeader>
       <Navbar />
     </HeaderStyled>
   );

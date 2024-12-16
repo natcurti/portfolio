@@ -1,17 +1,10 @@
 "use client";
 import Link from "next/link";
-import {
-  ContainerButtonStyled,
-  ListItemStyled,
-  ListStyled,
-  NavStyled,
-} from "./styled";
-import { IoClose } from "react-icons/io5";
+import { ListItemStyled, ListStyled, NavStyled } from "./styled";
 import { useNavBarContext } from "@/context/NavbarContext";
-import ButtonIcon from "../ButtonIcon";
 
 const Navbar = () => {
-  const { isOpen, setIsOpen } = useNavBarContext();
+  const { isOpen } = useNavBarContext();
 
   return (
     <NavStyled $isOpen={isOpen}>
@@ -32,11 +25,6 @@ const Navbar = () => {
           <Link href="">Contato</Link>
         </ListItemStyled>
       </ListStyled>
-      <ContainerButtonStyled>
-        <ButtonIcon onClick={() => setIsOpen(!isOpen)}>
-          <IoClose size={40} color="FFF" />
-        </ButtonIcon>
-      </ContainerButtonStyled>
     </NavStyled>
   );
 };

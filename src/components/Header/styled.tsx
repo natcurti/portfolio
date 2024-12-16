@@ -3,15 +3,23 @@ import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
   padding: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
   background-color: var(--dark-navy);
   z-index: 1;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   @media (min-width: 1200px) {
     padding: 2rem 4rem;
   }
+`;
+
+export const ContainerHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const ContainerLogoStyled = styled.div`
@@ -21,7 +29,11 @@ export const ContainerLogoStyled = styled.div`
 
   h2 {
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.25rem;
+    }
 
     @media (min-width: 992px) {
       font-size: 1.5rem;
@@ -38,8 +50,8 @@ export const ContainerLogoStyled = styled.div`
 `;
 
 export const ContainerImgStyled = styled.div`
-  width: 75px;
-  height: 43px;
+  width: 4.68rem;
+  height: 2.68rem;
   position: relative;
 
   img {
@@ -47,16 +59,7 @@ export const ContainerImgStyled = styled.div`
   }
 
   @media (min-width: 992px) {
-    width: 120px;
-    height: 68.8px;
-  }
-`;
-
-export const ContainerButtonStyled = styled.div`
-  display: grid;
-  place-items: center;
-
-  @media (min-width: 768px) {
-    display: none;
+    width: 7.5rem;
+    height: 4.3rem;
   }
 `;

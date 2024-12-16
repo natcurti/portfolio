@@ -14,18 +14,9 @@ const underlineAnimation = keyframes`
 
 export const NavStyled = styled.nav<{ $isOpen: boolean }>`
   overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: ${(props) => (props.$isOpen ? "100%" : "0")};
-  background-color: rgba(0, 0, 32, 0.5);
-  backdrop-filter: blur(10px);
-  transition: width 0.5s ease-in-out;
-  min-height: 100vh;
-  height: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  width: 100%;
+  transition: height 0.5s ease-in-out;
+  height: ${(props) => (props.$isOpen ? "17rem" : "0")};
 
   @media (min-width: 768px) {
     all: unset;
@@ -33,13 +24,11 @@ export const NavStyled = styled.nav<{ $isOpen: boolean }>`
 `;
 
 export const ListStyled = styled.ul<{ $isOpen: boolean }>`
-  padding: 2rem;
+  padding-top: 1.5rem;
   list-style: none;
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 
   @media (min-width: 768px) {
     padding: 0;
