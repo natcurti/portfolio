@@ -28,7 +28,7 @@ const ParticlesBg = () => {
               top: "5rem",
               zIndex: "-1",
               width: "100%",
-              height: "500px",
+              height: "700px",
               backgroundColor: "transparent",
             },
             autoPlay: true,

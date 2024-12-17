@@ -5,18 +5,16 @@ import Title from "../Title";
 import { SectionStyled } from "./styled";
 import ParticlesBg from "../ParticlesBg";
 
-const MainContainer = () => {
+const MainSection = () => {
   const { isOpen } = useNavBarContext();
 
   return (
-    <main>
-      <SectionStyled $isMenuOpen={isOpen}>
-        <ParticlesBg />
-        <Title />
-        <ImageMe />
-      </SectionStyled>
-    </main>
+    <SectionStyled $isMenuOpen={isOpen}>
+      <ParticlesBg />
+      <Title />
+      <ImageMe />
+    </SectionStyled>
   );
 };
 
-export default MainContainer;
+export default MainSection;

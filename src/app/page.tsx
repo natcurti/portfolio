@@ -1,11 +1,15 @@
+import AboutMe from "@/components/AboutMe";
 import Header from "@/components/Header";
-import MainContainer from "@/components/MainContainer";
+import MainSection from "@/components/MainSection";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <MainContainer />
+      <main>
+        <MainSection />
+        <AboutMe />
+      </main>
     </>
   );
 }
