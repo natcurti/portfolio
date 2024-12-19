@@ -1,5 +1,22 @@
+import {
+  InnerContainer,
+  SectionStyled,
+  TitleSection,
+  UnderlineDetail,
+} from "../sharedStyles";
+
 const SkillsSection = () => {
-  return <section></section>;
+  return (
+    <SectionStyled>
+      <InnerContainer>
+        <TitleSection>
+          Habilidades
+          <UnderlineDetail></UnderlineDetail>
+        </TitleSection>
+        <div></div>
+      </InnerContainer>
+    </SectionStyled>
+  );
 };
 
 export default SkillsSection;

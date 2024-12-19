@@ -36,14 +36,14 @@ const ParticlesBg = () => {
               backgroundColor: "transparent",
             },
             autoPlay: true,
-            backgroundMask: {
-              composite: "destination-out",
-              cover: {
-                opacity: 1,
-              },
-              enable: false,
-            },
-            clear: true,
+            // backgroundMask: {
+            //   composite: "destination-out",
+            //   cover: {
+            //     opacity: 1,
+            //   },
+            //   enable: false,
+            // },
+            // clear: true,
             delay: 0,
             fullScreen: {
               enable: true,
@@ -55,10 +55,10 @@ const ParticlesBg = () => {
             interactivity: {
               detectsOn: "window",
               events: {
-                onClick: {
-                  enable: false,
-                  mode: [],
-                },
+                // onClick: {
+                //   enable: false,
+                //   mode: [],
+                // },
                 onDiv: {
                   selectors: [],
                   enable: false,

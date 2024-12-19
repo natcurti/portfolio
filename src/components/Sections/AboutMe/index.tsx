@@ -1,14 +1,13 @@
 "use client";
+import { FirstText, SecondText } from "./styled";
+import useElementIsVisible from "@/hooks/useElementIsVisible";
+import useGenericRef from "@/hooks/useGenericRef";
 import {
-  ContainerText,
-  FirstText,
-  SecondText,
+  InnerContainer,
   SectionStyled,
   TitleSection,
   UnderlineDetail,
-} from "./styled";
-import useElementIsVisible from "@/hooks/useElementIsVisible";
-import useGenericRef from "@/hooks/useGenericRef";
+} from "../sharedStyles";
 
 const AboutMe = () => {
   const ref = useGenericRef<HTMLDivElement>();
@@ -17,7 +16,7 @@ const AboutMe = () => {
 
   return (
     <SectionStyled id="aboutMe">
-      <ContainerText ref={ref}>
+      <InnerContainer ref={ref}>
         {isVisible && (
           <>
             <TitleSection>
@@ -42,7 +41,7 @@ const AboutMe = () => {
             </SecondText>
           </>
         )}
-      </ContainerText>
+      </InnerContainer>
     </SectionStyled>
   );
 };
