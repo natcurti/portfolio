@@ -8,8 +8,6 @@ export const SectionStyled = styled.section<{ $isMenuOpen: boolean }>`
   padding-top: ${(props) => (props.$isMenuOpen ? "24rem" : "6rem")};
   padding-bottom: 2rem;
   transition: padding-top 0.5s ease-in-out;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
   @media (min-width: 576px) {
     flex-direction: row;
@@ -27,5 +25,6 @@ export const SectionStyled = styled.section<{ $isMenuOpen: boolean }>`
 
   @media (min-width: 992px) {
     padding-top: 12rem;
+    min-height: 700px;
   }
 `;

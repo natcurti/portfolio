@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
     
     :root{
+        --dakest-navy: #010112;
         --dark-navy: #000020;
         --medium-navy: #171a4a;
         --light-navy: #2f2c79;
