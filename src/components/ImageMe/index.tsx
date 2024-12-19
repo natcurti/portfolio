@@ -9,7 +9,8 @@ const ImageMe = () => {
         alt="Imagem de uma mulher, cabelos lisos e castanhos, sorrindo"
         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 40vw, 33vw"
         fill
-        priority
+        placeholder="blur"
+        blurDataURL={"/assets/img-me.png"}
       />
     </ContainerStyled>
   );

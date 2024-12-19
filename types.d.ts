@@ -1,5 +1,11 @@
 /* COMPONENTS */
 
+interface IButtonIcon {
+  onClick: () => void;
+  children: React.ReactNode;
+  isMenuBtn?: boolean;
+}
+
 /* HOOKS */
 
 interface IUseElementIsVisible<T extends HTMLElement> {

@@ -9,21 +9,14 @@ import {
 } from "./styled";
 import useElementIsVisible from "@/hooks/useElementIsVisible";
 import useGenericRef from "@/hooks/useGenericRef";
-import { useRef } from "react";
 
 const AboutMe = () => {
-  const parentRef = useRef<HTMLElement>(null);
   const ref = useGenericRef<HTMLDivElement>();
-  const options = {
-    root: parentRef.current,
-    rootMargin: "0px",
-    threshold: 1.0,
-  };
 
-  const { isVisible } = useElementIsVisible<HTMLDivElement>({ ref, options });
+  const { isVisible } = useElementIsVisible<HTMLDivElement>({ ref });
 
   return (
-    <SectionStyled ref={parentRef}>
+    <SectionStyled id="aboutMe">
       <ContainerText ref={ref}>
         {isVisible && (
           <>

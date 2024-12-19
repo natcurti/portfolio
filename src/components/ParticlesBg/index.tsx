@@ -4,9 +4,11 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import type { Engine } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { loadExternalTrailInteraction } from "@tsparticles/interaction-external-trail";
+import { OverlayDiv } from "./styled";
 
 const ParticlesBg = () => {
   const [init, setInit] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     initParticlesEngine(async (engine: Engine) => {
@@ -14,11 +16,13 @@ const ParticlesBg = () => {
       await loadExternalTrailInteraction(engine);
     }).then(() => {
       setInit(true);
+      setIsLoading(false);
     });
   }, []);
 
   return (
-    <div>
+    <>
+      {isLoading && <OverlayDiv />}
       {init && (
         <Particles
           id="particlesBg"
@@ -561,7 +565,7 @@ const ParticlesBg = () => {
           }}
         />
       )}
-    </div>
+    </>
   );
 };
 

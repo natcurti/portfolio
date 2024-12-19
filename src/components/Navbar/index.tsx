@@ -13,7 +13,7 @@ const Navbar = () => {
           <Link href="">Home</Link>
         </ListItemStyled>
         <ListItemStyled>
-          <Link href="">Sobre Mim</Link>
+          <Link href="#aboutMe">Sobre Mim</Link>
         </ListItemStyled>
         <ListItemStyled>
           <Link href="">Habilidades</Link>

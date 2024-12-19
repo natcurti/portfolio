@@ -7,24 +7,26 @@ const useElementIsVisible = <T extends HTMLElement>({
 }: IUseElementIsVisible<T>) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  useEffect(() => {
-    const ElementToObserve = ref.current;
-    const intersectionObserver = new IntersectionObserver((entries) => {
-      const [entry] = entries;
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    }, options);
+  const callbackIntersection = (entries: IntersectionObserverEntry[]) => {
+    const [entry] = entries;
+    setIsVisible(entry.isIntersecting);
+  };
 
-    if (ElementToObserve) {
-      intersectionObserver.observe(ElementToObserve);
+  useEffect(() => {
+    const intersectionObserver = new IntersectionObserver(
+      callbackIntersection,
+      options
+    );
+
+    if (ref.current) {
+      intersectionObserver.observe(ref.current);
     }
 
+    const element = ref.current;
+
     return () => {
-      if (ElementToObserve) {
-        intersectionObserver.unobserve(ElementToObserve);
+      if (element) {
+        intersectionObserver.unobserve(element);
       }
     };
   }, [ref, options]);

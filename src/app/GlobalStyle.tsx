@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
         --pink: #ff69b4;
         --light-pink: #ffa8d9;
         --white: #f0e7e7;
+        scroll-behavior: smooth;
     }
 
     * {
