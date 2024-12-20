@@ -19,11 +19,75 @@ import SkillsCard from "./SkillsCard";
 import { ContainerCards } from "./styled";
 import useShowAnimation from "@/hooks/useShowAnimation";
 import useGenericRef from "@/hooks/useGenericRef";
+import { useEffect, useState } from "react";
+
+const skillsArray = [
+  {
+    icon: <FaReact size={100} />,
+    title: "React",
+  },
+  {
+    icon: <TbBrandNextjs size={100} />,
+    title: "Next",
+  },
+  {
+    icon: <SiJavascript size={100} />,
+    title: "JavaScript",
+  },
+  {
+    icon: <SiRedux size={100} />,
+    title: "Redux",
+  },
+  {
+    icon: <RiTailwindCssFill size={100} />,
+    title: "Tailwind",
+  },
+  {
+    icon: <FaSass size={100} />,
+    title: "Sass",
+  },
+  {
+    icon: <FaBootstrap size={100} />,
+    title: "Bootstrap",
+  },
+  {
+    icon: <SiStyledcomponents size={100} />,
+    title: "Styled Components",
+  },
+  {
+    icon: <SiTypescript size={100} />,
+    title: "TypeScript",
+  },
+  {
+    icon: <RiFirebaseFill size={100} />,
+    title: "Firebase",
+  },
+  {
+    icon: <FaHtml5 size={100} />,
+    title: "HTML",
+  },
+  {
+    icon: <IoLogoCss3 size={100} />,
+    title: "CSS",
+  },
+];
 
 const SkillsSection = () => {
   const ref = useGenericRef<HTMLDivElement>();
-
   const { showAnimation } = useShowAnimation<HTMLDivElement>({ ref });
+  const [currentSkillToShow, setCurrentSkillToShow] = useState<number>(0);
+
+  useEffect(() => {
+    if (showAnimation) {
+      const intervalId = setInterval(() => {
+        if (currentSkillToShow < skillsArray.length) {
+          setCurrentSkillToShow((prev) => prev + 1);
+        }
+      }, 500);
+
+      return () => clearInterval(intervalId);
+    }
+  }, [currentSkillToShow, showAnimation]);
 
   return (
     <SectionStyled>
@@ -32,26 +96,19 @@ const SkillsSection = () => {
           Habilidades
           <UnderlineDetail></UnderlineDetail>
         </TitleSection>
-        <ContainerCards>
-          <SkillsCard icon={<FaReact size={100} />} title="React" />
-          <SkillsCard icon={<TbBrandNextjs size={100} />} title="Next" />
-          <SkillsCard icon={<SiJavascript size={100} />} title="JavaScript" />
-          <SkillsCard icon={<SiRedux size={100} />} title="Redux" />
-          <SkillsCard
-            icon={<RiTailwindCssFill size={100} />}
-            title="Tailwind"
-          />
-          <SkillsCard icon={<FaSass size={100} />} title="Sass" />
-          <SkillsCard icon={<FaBootstrap size={100} />} title="Bootstrap" />
-          <SkillsCard
-            icon={<SiStyledcomponents size={100} />}
-            title="Styled Components"
-          />
-          <SkillsCard icon={<SiTypescript size={100} />} title="TypeScript" />
-          <SkillsCard icon={<RiFirebaseFill size={100} />} title="Firebase" />
-          <SkillsCard icon={<FaHtml5 size={100} />} title="HTML" />
-          <SkillsCard icon={<IoLogoCss3 size={100} />} title="CSS" />
-        </ContainerCards>
+        {showAnimation && (
+          <ContainerCards>
+            {skillsArray.slice(0, currentSkillToShow + 1).map((skill) => {
+              return (
+                <SkillsCard
+                  icon={skill.icon}
+                  title={skill.title}
+                  key={skill.title}
+                />
+              );
+            })}
+          </ContainerCards>
+        )}
       </InnerContainer>
     </SectionStyled>
   );

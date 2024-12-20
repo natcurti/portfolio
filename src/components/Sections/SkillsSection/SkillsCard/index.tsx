@@ -1,11 +1,13 @@
-import { ContainerCard, TitleStyled } from "./styled";
+import { ContainerCard, ContainerOuter, TitleStyled } from "./styled";
 
 const SkillsCard = ({ icon, title }: ISkillCards) => {
   return (
-    <ContainerCard>
-      {icon}
-      <TitleStyled>{title}</TitleStyled>
-    </ContainerCard>
+    <ContainerOuter>
+      <ContainerCard>
+        {icon}
+        <TitleStyled>{title}</TitleStyled>
+      </ContainerCard>
+    </ContainerOuter>
   );
 };
 

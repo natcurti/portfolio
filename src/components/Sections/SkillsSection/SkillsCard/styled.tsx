@@ -1,5 +1,10 @@
 "use client";
 import styled from "styled-components";
+import { fadeIn } from "../../sharedStyles";
+
+export const ContainerOuter = styled.div`
+  animation: ${fadeIn} 5s forwards;
+`;
 
 export const ContainerCard = styled.div`
   @property --angle {
@@ -25,6 +30,8 @@ export const ContainerCard = styled.div`
   background-color: var(--darkest-navy);
   border-radius: 0.5rem;
   position: relative;
+  width: 17rem;
+  height: 9.5rem;
 
   &::after,
   &::before {

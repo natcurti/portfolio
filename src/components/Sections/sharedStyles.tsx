@@ -1,7 +1,7 @@
 "use client";
 import styled, { css, keyframes } from "styled-components";
 
-const fadeIn = keyframes`
+export const fadeIn = keyframes`
   from {
     opacity: 0;
   }
@@ -11,11 +11,15 @@ const fadeIn = keyframes`
 `;
 
 export const SectionStyled = styled.section`
-  padding: 4rem;
+  padding: 2rem;
   background-color: var(--darkest-navy);
   overflow: hidden;
   position: relative;
   z-index: 2;
+
+  @media (min-width: 768px) {
+    padding: 4rem;
+  }
 `;
 
 export const InnerContainer = styled.div`

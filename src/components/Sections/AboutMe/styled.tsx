@@ -27,9 +27,10 @@ const TextBaseStyled = styled.p`
   font-size: 1.25rem;
   text-align: center;
   line-height: 1.5;
+  width: 100%;
 
   @media (min-width: 768px) {
-    width: 70%;
+    width: 85%;
     font-size: 1.5rem;
   }
 `;
