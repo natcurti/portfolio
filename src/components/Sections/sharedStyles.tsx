@@ -1,5 +1,5 @@
 "use client";
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 const fadeIn = keyframes`
   from {
@@ -25,14 +25,18 @@ export const InnerContainer = styled.div`
   gap: 2rem;
 `;
 
-export const TitleSection = styled.h3`
+export const TitleSection = styled.h3<{ $showAnimation: boolean }>`
   font-family: var(--font-poppins);
   font-weight: 600;
   font-size: 2rem;
   position: relative;
   z-index: 1;
-  opacity: 0;
-  animation: ${fadeIn} 3s forwards;
+  opacity: 1;
+  animation: ${(props) =>
+    props.$showAnimation &&
+    css`
+      ${fadeIn} 3s forwards;
+    `};
 `;
 
 export const UnderlineDetail = styled.div`

@@ -1,5 +1,5 @@
 "use client";
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 const slideLeft = keyframes`
   from {
@@ -34,10 +34,18 @@ const TextBaseStyled = styled.p`
   }
 `;
 
-export const FirstText = styled(TextBaseStyled)`
-  animation: ${slideLeft} 3s forwards;
+export const FirstText = styled(TextBaseStyled)<{ $showAnimation: boolean }>`
+  animation: ${(props) =>
+    props.$showAnimation &&
+    css`
+      ${slideLeft} 3s forwards;
+    `};
 `;
 
-export const SecondText = styled(TextBaseStyled)`
-  animation: ${slideRight} 3s forwards;
+export const SecondText = styled(TextBaseStyled)<{ $showAnimation: boolean }>`
+  animation: ${(props) =>
+    props.$showAnimation &&
+    css`
+      ${slideRight} 3s forwards;
+    `};
 `;

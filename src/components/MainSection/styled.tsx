@@ -9,6 +9,7 @@ export const SectionStyled = styled.section<{ $isMenuOpen: boolean }>`
   padding-bottom: 2rem;
   transition: padding-top 0.5s ease-in-out;
   position: relative;
+  overflow: hidden;
 
   @media (min-width: 576px) {
     flex-direction: row;
@@ -28,4 +29,14 @@ export const SectionStyled = styled.section<{ $isMenuOpen: boolean }>`
     padding-top: 12rem;
     min-height: 700px;
   }
+`;
+
+export const OverlayDiv = styled.div`
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100vw;
+  height: 700px;
 `;

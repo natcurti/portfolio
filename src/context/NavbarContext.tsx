@@ -1,11 +1,6 @@
 "use client";
 import { createContext, useContext, useState } from "react";
 
-interface INavBarContext {
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
 const NavbarContext = createContext<INavBarContext>({
   isOpen: false,
   setIsOpen: () => {},

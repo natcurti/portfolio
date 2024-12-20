@@ -1,3 +1,4 @@
+"use client";
 import { FaReact, FaSass, FaBootstrap, FaHtml5 } from "react-icons/fa";
 import { TbBrandNextjs } from "react-icons/tb";
 import {
@@ -8,7 +9,6 @@ import {
 } from "react-icons/si";
 import { RiTailwindCssFill, RiFirebaseFill } from "react-icons/ri";
 import { IoLogoCss3 } from "react-icons/io";
-
 import {
   InnerContainer,
   SectionStyled,
@@ -17,12 +17,18 @@ import {
 } from "../sharedStyles";
 import SkillsCard from "./SkillsCard";
 import { ContainerCards } from "./styled";
+import useShowAnimation from "@/hooks/useShowAnimation";
+import useGenericRef from "@/hooks/useGenericRef";
 
 const SkillsSection = () => {
+  const ref = useGenericRef<HTMLDivElement>();
+
+  const { showAnimation } = useShowAnimation<HTMLDivElement>({ ref });
+
   return (
     <SectionStyled>
-      <InnerContainer>
-        <TitleSection>
+      <InnerContainer ref={ref}>
+        <TitleSection $showAnimation={showAnimation}>
           Habilidades
           <UnderlineDetail></UnderlineDetail>
         </TitleSection>

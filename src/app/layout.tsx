@@ -1,20 +1,14 @@
+import { LoadingParticlesProvider } from "@/context/LoadingParticlesContext";
 import { NavbarProvider } from "@/context/NavbarContext";
 import StyledComponentsRegistry from "@/lib/StyledComponentsRegistry";
 import type { Metadata } from "next";
-import { Quicksand, Roboto_Mono, Poppins } from "next/font/google";
+import { Quicksand, Poppins } from "next/font/google";
 
 const quicksand = Quicksand({
   display: "swap",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-quicksand",
-});
-
-const roboto = Roboto_Mono({
-  display: "swap",
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-roboto",
 });
 
 const poppins = Poppins({
@@ -35,14 +29,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-br"
-      className={`${quicksand.variable} ${roboto.variable} ${poppins.variable}`}
-    >
+    <html lang="pt-br" className={`${quicksand.variable} ${poppins.variable}`}>
       <NavbarProvider>
-        <body>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </body>
+        <LoadingParticlesProvider>
+          <body>
+            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          </body>
+        </LoadingParticlesProvider>
       </NavbarProvider>
     </html>
   );

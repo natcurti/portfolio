@@ -13,9 +13,21 @@ interface ISkillCards {
 
 /* HOOKS */
 
-interface IUseElementIsVisible<T extends HTMLElement> {
+interface IUseShowAnimation<T extends HTMLElement> {
   ref: IGenericRef<T>;
   options?: IIntersectionObserverOptions;
+}
+
+/* CONTEXT */
+
+interface INavBarContext {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+interface ILoadingParticlesContext {
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 /* EXTRA */

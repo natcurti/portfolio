@@ -1,3 +1,4 @@
+"use client";
 import { useRef } from "react";
 
 const useGenericRef = <T extends HTMLElement>(): IGenericRef<T> => {
