@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
     
     :root{
-        --dakest-navy: #010112;
+        --darkest-navy: #010112;
         --dark-navy: #000020;
         --medium-navy: #171a4a;
         --light-navy: #2f2c79;
@@ -13,6 +13,19 @@ const GlobalStyle = createGlobalStyle`
         scroll-behavior: smooth;
     }
 
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: var(--light-navy);
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: var(--dark-navy);
+    }
+
     * {
         margin: 0;
         padding: 0;
@@ -20,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: var(--dark-navy);
+        background-color: var(--darkest-navy);
         color: var(--white);
         font-family: var(--font-quicksand);
     }

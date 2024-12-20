@@ -6,6 +6,11 @@ interface IButtonIcon {
   isMenuBtn?: boolean;
 }
 
+interface ISkillCards {
+  icon: React.ReactNode;
+  title: string;
+}
+
 /* HOOKS */
 
 interface IUseElementIsVisible<T extends HTMLElement> {

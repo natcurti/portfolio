@@ -1,0 +1,7 @@
+#particlesBg {
+  background-color: var(--dark-navy);
+  width: 100%;
+  height: 700px;
+  position: absolute;
+  z-index: -1;
+}

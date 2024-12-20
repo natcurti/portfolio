@@ -1,9 +1,11 @@
+import { FaReact } from "react-icons/fa";
 import {
   InnerContainer,
   SectionStyled,
   TitleSection,
   UnderlineDetail,
 } from "../sharedStyles";
+import SkillsCard from "./SkillsCard";
 
 const SkillsSection = () => {
   return (
@@ -13,7 +15,9 @@ const SkillsSection = () => {
           Habilidades
           <UnderlineDetail></UnderlineDetail>
         </TitleSection>
-        <div></div>
+        <div>
+          <SkillsCard icon={<FaReact size={100} />} title="React" />
+        </div>
       </InnerContainer>
     </SectionStyled>
   );

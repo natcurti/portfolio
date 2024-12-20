@@ -5,6 +5,7 @@ import type { Engine } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { loadExternalTrailInteraction } from "@tsparticles/interaction-external-trail";
 import { OverlayDiv } from "./styled";
+import "./styles.css";
 
 const ParticlesBg = () => {
   const [init, setInit] = useState(false);
@@ -33,7 +34,6 @@ const ParticlesBg = () => {
               zIndex: "-1",
               width: "100%",
               height: "700px",
-              backgroundColor: "transparent",
             },
             autoPlay: true,
             // backgroundMask: {

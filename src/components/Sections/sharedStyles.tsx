@@ -12,8 +12,10 @@ const fadeIn = keyframes`
 
 export const SectionStyled = styled.section`
   padding: 4rem;
-  background-color: var(--dakest-navy);
-  z-index: 1;
+  background-color: var(--darkest-navy);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
 `;
 
 export const InnerContainer = styled.div`

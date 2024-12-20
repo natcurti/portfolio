@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
   padding: 1.5rem;
-  background-color: var(--dakest-navy);
+  background-color: var(--darkest-navy);
   z-index: 10;
   position: fixed;
   top: 0;
