@@ -90,7 +90,7 @@ const SkillsSection = () => {
   }, [currentSkillToShow, showAnimation]);
 
   return (
-    <SectionStyled>
+    <SectionStyled id="skills" $sectionType="skills">
       <InnerContainer ref={ref}>
         <TitleSection $showAnimation={showAnimation}>
           Habilidades

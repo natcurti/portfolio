@@ -10,15 +10,15 @@ export const fadeIn = keyframes`
   }
 `;
 
-export const SectionStyled = styled.section`
-  padding: 2rem;
+export const SectionStyled = styled.section<{ $sectionType: string }>`
+  padding: ${(props) => props.$sectionType !== "projects" && "2rem"};
   background-color: var(--darkest-navy);
   overflow: hidden;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 
   @media (min-width: 768px) {
-    padding: 4rem;
+    padding: ${(props) => props.$sectionType !== "projects" && "4rem"};
   }
 `;
 
@@ -34,8 +34,8 @@ export const TitleSection = styled.h3<{ $showAnimation: boolean }>`
   font-weight: 600;
   font-size: 2rem;
   position: relative;
-  z-index: 1;
-  opacity: 1;
+  z-index: 2;
+  opacity: 0;
   animation: ${(props) =>
     props.$showAnimation &&
     css`

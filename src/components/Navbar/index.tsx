@@ -10,19 +10,19 @@ const Navbar = () => {
     <NavStyled $isOpen={isOpen}>
       <ListStyled $isOpen={isOpen}>
         <ListItemStyled>
-          <Link href="">Home</Link>
+          <Link href="/">Home</Link>
         </ListItemStyled>
         <ListItemStyled>
           <Link href="#aboutMe">Sobre Mim</Link>
         </ListItemStyled>
         <ListItemStyled>
-          <Link href="">Habilidades</Link>
+          <Link href="#skills">Habilidades</Link>
         </ListItemStyled>
         <ListItemStyled>
-          <Link href="">Projetos</Link>
+          <Link href="#projects">Projetos</Link>
         </ListItemStyled>
         <ListItemStyled>
-          <Link href="">Contato</Link>
+          <Link href="#contact">Contato</Link>
         </ListItemStyled>
       </ListStyled>
     </NavStyled>

@@ -15,7 +15,7 @@ const AboutMe = () => {
   const { showAnimation } = useShowAnimation<HTMLDivElement>({ ref });
 
   return (
-    <SectionStyled id="aboutMe">
+    <SectionStyled id="aboutMe" $sectionType="about">
       <InnerContainer ref={ref}>
         <TitleSection $showAnimation={showAnimation}>
           Sobre mim

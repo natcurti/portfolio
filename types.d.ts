@@ -11,6 +11,12 @@ interface ISkillCards {
   title: string;
 }
 
+interface IProjectCard {
+  title: string;
+  text: string;
+  imgSrc: string;
+}
+
 /* HOOKS */
 
 interface IUseShowAnimation<T extends HTMLElement> {

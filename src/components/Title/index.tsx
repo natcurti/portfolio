@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ContainerStyled,
   TitleStyled,
@@ -12,27 +12,38 @@ const Title = () => {
   const [sentence, setSentence] = useState("");
   const [showCursor, setShowCursor] = useState(true);
   const text = "Olá! Eu sou a Natalia";
+  const prevSentence = useRef<string | null>(null);
 
-  useEffect(() => {
-    const delay = 150;
-    const intervalId = setInterval(() => {
-      if (sentence.length < text.length) {
-        setSentence((prev) => prev + text[sentence.length]);
-      } else {
-        clearInterval(intervalId);
-        setShowCursor(false);
-      }
-    }, delay);
-
-    return () => clearInterval(intervalId);
-  }, [sentence]);
-
-  return (
-    <ContainerStyled>
+  const renderTitle = useMemo(() => {
+    return (
       <TitleStyled>
         {sentence}
         {showCursor && <CursorStyled>|</CursorStyled>}
       </TitleStyled>
+    );
+  }, [sentence, showCursor]);
+
+  useEffect(() => {
+    const delay = 150;
+
+    const animateText = () => {
+      if (sentence.length < text.length && sentence !== prevSentence.current) {
+        setSentence((prev) => prev + text[sentence.length]);
+        prevSentence.current = sentence;
+      } else {
+        clearInterval(intervalId);
+        setShowCursor(false);
+      }
+    };
+
+    const intervalId = setInterval(animateText, delay);
+
+    return () => clearInterval(intervalId);
+  }, [sentence.length]);
+
+  return (
+    <ContainerStyled>
+      {renderTitle}
       <SubtitleStyled>Desenvolvedora Front-End</SubtitleStyled>
       <TextStyled>
         Estou em constante evolução. A cada projeto, descubro novas
