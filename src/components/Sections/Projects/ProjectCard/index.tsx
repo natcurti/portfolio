@@ -34,9 +34,14 @@ const ProjectCard = ({ title, text, imgSrc }: IProjectCard) => {
         </LinksProject>
       </ContainerInfo>
       <ContainerColorful>
-        <ContainerImg>
-          <Image src={imgSrc} alt={`Screenshot do projeto ${title}`} fill />
-        </ContainerImg>
+        <Link
+          href="https://kanban-task-manager-ecru.vercel.app/"
+          target="_blank"
+        >
+          <ContainerImg>
+            <Image src={imgSrc} alt={`Screenshot do projeto ${title}`} fill />
+          </ContainerImg>
+        </Link>
       </ContainerColorful>
     </SectionProject>
   );

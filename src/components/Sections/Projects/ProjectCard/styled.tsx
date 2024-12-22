@@ -114,6 +114,8 @@ export const ContainerColorful = styled.div`
   width: 80%;
   height: 250px;
   position: relative;
+  cursor: pointer;
+  transition: transform 0.25s linear;
 
   @media (min-width: 480px) {
     height: 300px;
@@ -122,6 +124,16 @@ export const ContainerColorful = styled.div`
   @media (min-width: 768px) {
     width: 70%;
     height: 500px;
+  }
+
+  &:hover {
+    transform: scale(0.9);
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 `;
 

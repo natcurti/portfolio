@@ -24,6 +24,7 @@ const slideRight = keyframes`
 `;
 
 const TextBaseStyled = styled.p`
+  opacity: 0;
   font-size: 1.25rem;
   text-align: center;
   line-height: 1.5;

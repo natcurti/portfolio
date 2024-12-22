@@ -26,7 +26,7 @@ const AboutMe = () => {
           Desenvolvimento de Sistemas na Fatec Araraquara. Possuo conhecimentos
           em desenvolvimento de interfaces intuitivas e responsivas, utilizando
           tecnologias como React.js, Next.js, Redux, JavaScript, TypeScript,
-          Styled Components, Tailwind CSS e Bootstrap, entre outras.
+          Styled Components, Tailwind CSS, Bootstrap, entre outras.
         </FirstText>
         <SecondText $showAnimation={showAnimation}>
           Busco constantemente aprimorar meus conhecimentos e minhas
