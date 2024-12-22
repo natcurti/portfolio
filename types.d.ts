@@ -15,6 +15,9 @@ interface IProjectCard {
   title: string;
   text: string;
   imgSrc: string;
+  linkApp: string;
+  linkGit: string;
+  position: string;
 }
 
 /* HOOKS */

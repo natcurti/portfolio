@@ -11,14 +11,15 @@ export const fadeIn = keyframes`
 `;
 
 export const SectionStyled = styled.section<{ $sectionType: string }>`
-  padding: ${(props) => props.$sectionType !== "projects" && "2rem"};
+  padding: 2rem ${(props) => (props.$sectionType === "projects" ? "0" : "2rem")};
   background-color: var(--darkest-navy);
   overflow: hidden;
   position: relative;
   z-index: 1;
 
   @media (min-width: 768px) {
-    padding: ${(props) => props.$sectionType !== "projects" && "4rem"};
+    padding: 4rem
+      ${(props) => (props.$sectionType === "projects" ? "0" : "4rem")};
   }
 `;
 

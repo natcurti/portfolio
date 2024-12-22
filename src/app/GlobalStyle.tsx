@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
     :root{
         --darkest-navy: #010112;
         --dark-navy: #000020;
-        --medium-navy: #171a4a;
+        --medium-navy: #080d52;
         --light-navy: #2f2c79;
         --pink: #ff69b4;
         --light-pink: #ffa8d9;

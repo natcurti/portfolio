@@ -32,7 +32,7 @@ export default function RootLayout({
       <NavbarProvider>
         <body>
           <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </body>{" "}
+        </body>
       </NavbarProvider>
     </html>
   );

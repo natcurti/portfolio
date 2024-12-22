@@ -10,35 +10,33 @@ import {
 } from "./styled";
 import Image from "next/image";
 
-const ProjectCard = ({ title, text, imgSrc }: IProjectCard) => {
+const ProjectCard = ({
+  title,
+  text,
+  imgSrc,
+  linkApp,
+  linkGit,
+  position,
+}: IProjectCard) => {
   return (
-    <SectionProject>
-      <ContainerInfo>
+    <SectionProject $position={position}>
+      <ContainerInfo $position={position}>
         <TitleProject>{title}</TitleProject>
         <TextProject>{text}</TextProject>
         <LinksProject>
-          <Link
-            href="https://kanban-task-manager-ecru.vercel.app/"
-            target="_blank"
-          >
+          <Link href={linkApp} target="_blank">
             Live App
           </Link>
         </LinksProject>
         <LinksProject>
-          <Link
-            href="https://github.com/natcurti/kanban-task-manager"
-            target="_blank"
-          >
+          <Link href={linkGit} target="_blank">
             Repositório
           </Link>
         </LinksProject>
       </ContainerInfo>
       <ContainerColorful>
-        <Link
-          href="https://kanban-task-manager-ecru.vercel.app/"
-          target="_blank"
-        >
-          <ContainerImg>
+        <Link href={linkApp} target="_blank">
+          <ContainerImg $position={position}>
             <Image src={imgSrc} alt={`Screenshot do projeto ${title}`} fill />
           </ContainerImg>
         </Link>

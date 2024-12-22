@@ -12,20 +12,22 @@ const animateBorderBottom = keyframes`
 
 `;
 
-export const SectionProject = styled.section`
+export const SectionProject = styled.section<{ $position: string }>`
   margin: 2rem 0;
   width: 100%;
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: ${(props) =>
+    props.$position === "right" ? "flex-end" : "flex-start"};
 `;
 
-export const ContainerInfo = styled.div`
+export const ContainerInfo = styled.div<{ $position: string }>`
   padding: 0.5rem;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 0;
+  right: ${(props) => (props.$position === "right" ? "unset" : "0")};
+  left: ${(props) => (props.$position === "right" ? "0" : "unset")};
   z-index: 1;
   width: 50%;
   height: 80%;
@@ -110,7 +112,7 @@ export const LinksProject = styled.span`
 `;
 
 export const ContainerColorful = styled.div`
-  background-color: #0c1374;
+  background-color: var(--medium-navy);
   width: 80%;
   height: 250px;
   position: relative;
@@ -137,11 +139,12 @@ export const ContainerColorful = styled.div`
   }
 `;
 
-export const ContainerImg = styled.div`
+export const ContainerImg = styled.div<{ $position: string }>`
   width: 90%;
   height: 90%;
   position: absolute;
-  right: 0;
+  right: ${(props) => (props.$position === "right" ? "0" : "unset")};
+  left: ${(props) => (props.$position === "right" ? "unset" : "0")};
   top: 50%;
   transform: translateY(-50%);
 
