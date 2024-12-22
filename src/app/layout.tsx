@@ -1,4 +1,3 @@
-import { LoadingParticlesProvider } from "@/context/LoadingParticlesContext";
 import { NavbarProvider } from "@/context/NavbarContext";
 import StyledComponentsRegistry from "@/lib/StyledComponentsRegistry";
 import type { Metadata } from "next";
@@ -31,11 +30,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={`${quicksand.variable} ${poppins.variable}`}>
       <NavbarProvider>
-        <LoadingParticlesProvider>
-          <body>
-            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-          </body>
-        </LoadingParticlesProvider>
+        <body>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </body>{" "}
       </NavbarProvider>
     </html>
   );
