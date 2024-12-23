@@ -1,4 +1,5 @@
 import { NavbarProvider } from "@/context/NavbarContext";
+import { SectionRefsProvider } from "@/context/SectionRefsContext";
 import StyledComponentsRegistry from "@/lib/StyledComponentsRegistry";
 import type { Metadata } from "next";
 import { Quicksand, Poppins } from "next/font/google";
@@ -30,9 +31,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={`${quicksand.variable} ${poppins.variable}`}>
       <NavbarProvider>
-        <body>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </body>
+        <SectionRefsProvider>
+          <body>
+            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          </body>
+        </SectionRefsProvider>
       </NavbarProvider>
     </html>
   );

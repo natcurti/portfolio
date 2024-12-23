@@ -8,15 +8,21 @@ import {
   UnderlineDetail,
 } from "../sharedStyles";
 import useShowAnimation from "@/hooks/useShowAnimation";
+import { useEffect } from "react";
+import { useRefContext } from "@/context/SectionRefsContext";
 
 const AboutMe = () => {
-  const ref = useGenericRef<HTMLDivElement>();
+  const ref = useGenericRef<HTMLElement>();
+  const { showAnimation } = useShowAnimation<HTMLElement>({ ref });
+  const { registerRef } = useRefContext();
 
-  const { showAnimation } = useShowAnimation<HTMLDivElement>({ ref });
+  useEffect(() => {
+    registerRef(ref as React.RefObject<HTMLElement>);
+  }, [registerRef, ref]);
 
   return (
-    <SectionStyled id="aboutMe" $sectionType="about">
-      <InnerContainer ref={ref}>
+    <SectionStyled id="aboutMe" $sectionType="about" ref={ref}>
+      <InnerContainer>
         <TitleSection $showAnimation={showAnimation}>
           Sobre mim
           <UnderlineDetail></UnderlineDetail>

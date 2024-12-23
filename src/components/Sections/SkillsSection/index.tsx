@@ -20,6 +20,7 @@ import { ContainerCards } from "./styled";
 import useShowAnimation from "@/hooks/useShowAnimation";
 import useGenericRef from "@/hooks/useGenericRef";
 import { useEffect, useState } from "react";
+import { useRefContext } from "@/context/SectionRefsContext";
 
 const skillsArray = [
   {
@@ -73,9 +74,14 @@ const skillsArray = [
 ];
 
 const SkillsSection = () => {
-  const ref = useGenericRef<HTMLDivElement>();
-  const { showAnimation } = useShowAnimation<HTMLDivElement>({ ref });
+  const ref = useGenericRef<HTMLElement>();
+  const { showAnimation } = useShowAnimation<HTMLElement>({ ref });
   const [currentSkillToShow, setCurrentSkillToShow] = useState<number>(0);
+  const { registerRef } = useRefContext();
+
+  useEffect(() => {
+    registerRef(ref as React.RefObject<HTMLElement>);
+  }, [registerRef, ref]);
 
   useEffect(() => {
     if (showAnimation) {
@@ -90,8 +96,8 @@ const SkillsSection = () => {
   }, [currentSkillToShow, showAnimation]);
 
   return (
-    <SectionStyled id="skills" $sectionType="skills">
-      <InnerContainer ref={ref}>
+    <SectionStyled id="skills" $sectionType="skills" ref={ref}>
+      <InnerContainer>
         <TitleSection $showAnimation={showAnimation}>
           Habilidades
           <UnderlineDetail></UnderlineDetail>

@@ -20,6 +20,10 @@ interface IProjectCard {
   position: string;
 }
 
+interface INavBar {
+  headerRef: React.RefObject<HTMLHeadingElement | null>;
+}
+
 /* HOOKS */
 
 interface IUseShowAnimation<T extends HTMLElement> {
@@ -34,9 +38,9 @@ interface INavBarContext {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-interface ILoadingParticlesContext {
-  isLoading: boolean;
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+interface IRefContext {
+  sectionRefs: React.RefObject<HTMLElement>[];
+  registerRef: (ref: React.RefObject<HTMLElement>) => void;
 }
 
 /* EXTRA */

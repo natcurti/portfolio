@@ -9,6 +9,8 @@ import {
 import useGenericRef from "@/hooks/useGenericRef";
 import ProjectCard from "./ProjectCard";
 import { ContainerProjects } from "./styled";
+import { useRefContext } from "@/context/SectionRefsContext";
+import { useEffect } from "react";
 
 const projectsToShow = [
   {
@@ -54,12 +56,17 @@ const projectsToShow = [
 ];
 
 const Projects = () => {
-  const ref = useGenericRef<HTMLDivElement>();
-  const { showAnimation } = useShowAnimation<HTMLDivElement>({ ref });
+  const ref = useGenericRef<HTMLElement>();
+  const { showAnimation } = useShowAnimation<HTMLElement>({ ref });
+  const { registerRef } = useRefContext();
+
+  useEffect(() => {
+    registerRef(ref as React.RefObject<HTMLElement>);
+  }, [registerRef, ref]);
 
   return (
-    <SectionStyled id="projects" $sectionType="projects">
-      <InnerContainer ref={ref}>
+    <SectionStyled id="projects" $sectionType="projects" ref={ref}>
+      <InnerContainer>
         <TitleSection $showAnimation={showAnimation}>
           Projetos
           <UnderlineDetail></UnderlineDetail>

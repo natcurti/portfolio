@@ -9,14 +9,16 @@ import {
 } from "./styled";
 import { useNavBarContext } from "@/context/NavbarContext";
 import ButtonIcon from "../ButtonIcon";
-import Navbar from "../Navbar";
 import { IoClose } from "react-icons/io5";
+import Navbar from "../Navbar";
+import useGenericRef from "@/hooks/useGenericRef";
 
 const Header = () => {
   const { isOpen, setIsOpen } = useNavBarContext();
+  const ref = useGenericRef<HTMLHeadingElement>();
 
   return (
-    <HeaderStyled>
+    <HeaderStyled ref={ref}>
       <ContainerHeader>
         <ContainerLogoStyled>
           <ContainerImgStyled>
@@ -39,7 +41,7 @@ const Header = () => {
           )}
         </ButtonIcon>
       </ContainerHeader>
-      <Navbar />
+      <Navbar headerRef={ref} />
     </HeaderStyled>
   );
 };

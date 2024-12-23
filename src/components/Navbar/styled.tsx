@@ -16,7 +16,7 @@ export const NavStyled = styled.nav<{ $isOpen: boolean }>`
   overflow: hidden;
   width: 100%;
   transition: height 0.5s ease-in-out;
-  height: ${(props) => (props.$isOpen ? "17rem" : "0")};
+  height: ${(props) => (props.$isOpen ? "18.5rem" : "0")};
 
   @media (min-width: 768px) {
     all: unset;
@@ -24,11 +24,11 @@ export const NavStyled = styled.nav<{ $isOpen: boolean }>`
 `;
 
 export const ListStyled = styled.ul<{ $isOpen: boolean }>`
-  padding-top: 1.5rem;
+  padding: 1.5rem 0;
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.75rem;
 
   @media (min-width: 768px) {
     padding: 0;
