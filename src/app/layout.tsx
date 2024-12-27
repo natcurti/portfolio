@@ -7,7 +7,7 @@ import { Quicksand, Poppins } from "next/font/google";
 const quicksand = Quicksand({
   display: "swap",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-quicksand",
 });
 

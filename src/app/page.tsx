@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import MainSection from "@/components/MainSection";
 import SkillsSection from "@/components/Sections/SkillsSection";
 import Projects from "@/components/Sections/Projects";
+import Contact from "@/components/Sections/Contact";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <AboutMe />
         <SkillsSection />
         <Projects />
+        <Contact />
       </main>
     </>
   );

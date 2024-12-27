@@ -27,6 +27,6 @@ export const SectionStyled = styled.section<{ $isMenuOpen: boolean }>`
 
   @media (min-width: 992px) {
     padding-top: 12rem;
-    min-height: 700px;
+    min-height: 750px;
   }
 `;

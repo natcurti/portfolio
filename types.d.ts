@@ -6,6 +6,10 @@ interface IButtonIcon {
   isMenuBtn?: boolean;
 }
 
+interface IButton {
+  children: React.ReactNode;
+}
+
 interface ISkillCards {
   icon: React.ReactNode;
   title: string;
@@ -22,6 +26,12 @@ interface IProjectCard {
 
 interface INavBar {
   headerRef: React.RefObject<HTMLHeadingElement | null>;
+}
+
+interface IInput {
+  name: string;
+  id: string;
+  isTextArea?: boolean;
 }
 
 /* HOOKS */

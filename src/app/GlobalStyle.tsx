@@ -7,21 +7,22 @@ const GlobalStyle = createGlobalStyle`
         --dark-navy: #000020;
         --medium-navy: #080d52;
         --light-navy: #2f2c79;
+        --light-blue: #2954a3;
         --pink: #ff69b4;
         --light-pink: #ffa8d9;
         --white: #f0e7e7;
     }
 
-    ::-webkit-scrollbar {
+    body::-webkit-scrollbar {
         width: 10px;
     }
     
-    ::-webkit-scrollbar-thumb {
+    body::-webkit-scrollbar-thumb {
         background: var(--light-navy);
         border-radius: 10px;
     }
     
-    ::-webkit-scrollbar-track {
+    body::-webkit-scrollbar-track {
         background: var(--dark-navy);
     }
 
