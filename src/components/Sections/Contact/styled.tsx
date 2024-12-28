@@ -6,7 +6,8 @@ export const ContainerIcons = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
-  width: max-content;
+  width: 20.125rem;
+  height: 24.5rem;
 `;
 
 export const ContainerFormAndIcons = styled.div`
@@ -18,6 +19,10 @@ export const ContainerFormAndIcons = styled.div`
 
   @media (min-width: 1100px) {
     flex-direction: row;
-    gap: 7rem;
+    gap: 5rem;
+  }
+
+  @media (min-width: 1200px) {
+    gap: 10rem;
   }
 `;

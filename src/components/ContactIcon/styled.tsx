@@ -1,5 +1,6 @@
 "use client";
 import styled from "styled-components";
+import { fadeInAndTranslate } from "../animations/animations";
 
 export const ContainerLink = styled.a`
   display: flex;
@@ -7,6 +8,7 @@ export const ContainerLink = styled.a`
   gap: 0.75rem;
   text-decoration: none;
   color: var(--white);
+  animation: ${fadeInAndTranslate} 1.5s ease-in forwards;
 
   @media (min-width: 480px) {
     gap: 2rem;

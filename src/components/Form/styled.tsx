@@ -1,5 +1,6 @@
 "use client";
 import styled from "styled-components";
+import { fadeInAndTranslate } from "../animations/animations";
 
 export const FormStyled = styled.form`
   width: 100%;
@@ -9,6 +10,7 @@ export const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  animation: ${fadeInAndTranslate} 1.5s ease-in forwards;
 
   @media (min-width: 768px) {
     padding: 2rem;

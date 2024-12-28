@@ -8,7 +8,7 @@ import {
 } from "../sharedStyles";
 import useShowAnimation from "@/hooks/useShowAnimation";
 import { useRefContext } from "@/context/SectionRefsContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Form from "@/components/Form";
 import ContactIcon from "@/components/ContactIcon";
 import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
@@ -47,10 +47,23 @@ const Contact = () => {
   const ref = useGenericRef<HTMLElement>();
   const { showAnimation } = useShowAnimation<HTMLElement>({ ref });
   const { registerRef } = useRefContext();
+  const [contactToShow, setContactToShow] = useState<number>(0);
 
   useEffect(() => {
     registerRef(ref as React.RefObject<HTMLElement>);
   }, [registerRef, ref]);
+
+  useEffect(() => {
+    if (showAnimation) {
+      const intervalId = setInterval(() => {
+        if (contactToShow < contactTypes.length) {
+          setContactToShow((prev) => prev + 1);
+        }
+      }, 500);
+
+      return () => clearInterval(intervalId);
+    }
+  }, [contactToShow, showAnimation]);
 
   return (
     <SectionStyled $sectionType="contact" ref={ref} id="contact">
@@ -59,14 +72,16 @@ const Contact = () => {
           Contato
           <UnderlineDetail></UnderlineDetail>
         </TitleSection>
-        <ContainerFormAndIcons>
-          <Form />
-          <ContainerIcons>
-            {contactTypes.map((type) => (
-              <ContactIcon key={type.title} {...type} />
-            ))}
-          </ContainerIcons>
-        </ContainerFormAndIcons>
+        {showAnimation && (
+          <ContainerFormAndIcons>
+            <Form />
+            <ContainerIcons>
+              {contactTypes.slice(0, contactToShow + 1).map((type) => {
+                return <ContactIcon key={type.title} {...type} />;
+              })}
+            </ContainerIcons>
+          </ContainerFormAndIcons>
+        )}
       </InnerContainer>
     </SectionStyled>
   );
