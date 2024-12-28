@@ -10,6 +10,13 @@ interface IButton {
   children: React.ReactNode;
 }
 
+interface ICustomButton {
+  as?: "button" | "a";
+  href?: string;
+  onClick?: () => void;
+  children: React.ReactNode;
+}
+
 interface ISkillCards {
   icon: React.ReactNode;
   title: string;

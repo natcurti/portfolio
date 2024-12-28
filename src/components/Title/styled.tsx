@@ -68,6 +68,7 @@ export const TextStyled = styled.h3`
   font-size: 1.25rem;
   font-weight: 500;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.5rem;
 
   @media (min-width: 400px) {
     font-size: 1.45rem;

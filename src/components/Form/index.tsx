@@ -1,4 +1,4 @@
-import Button from "../Button";
+import CustomButton from "../CustomButton";
 import Input from "../Input";
 import {
   ContainerButton,
@@ -23,7 +23,7 @@ const Form = () => {
       <Input name="Email" id="email" />
       <Input name="Mensagem" id="mensagem" isTextArea />
       <ContainerButton>
-        <Button>Enviar</Button>
+        <CustomButton as="button">Enviar</CustomButton>
       </ContainerButton>
     </FormStyled>
   );

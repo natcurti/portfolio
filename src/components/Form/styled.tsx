@@ -51,6 +51,7 @@ export const ContainerInputName = styled.div`
 
 export const ContainerButton = styled.div`
   width: 100%;
-  text-align: center;
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
 `;

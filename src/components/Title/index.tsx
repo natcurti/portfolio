@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ContainerStyled,
   TitleStyled,
@@ -7,21 +7,13 @@ import {
   TextStyled,
   CursorStyled,
 } from "./styled";
+import CustomButton from "../CustomButton";
 
 const Title = () => {
   const [sentence, setSentence] = useState("");
   const [showCursor, setShowCursor] = useState(true);
   const text = "Olá! Eu sou a Natalia";
   const prevSentence = useRef<string | null>(null);
-
-  const renderTitle = useMemo(() => {
-    return (
-      <TitleStyled>
-        {sentence}
-        {showCursor && <CursorStyled>|</CursorStyled>}
-      </TitleStyled>
-    );
-  }, [sentence, showCursor]);
 
   useEffect(() => {
     const delay = 150;
@@ -39,16 +31,22 @@ const Title = () => {
     const intervalId = setInterval(animateText, delay);
 
     return () => clearInterval(intervalId);
-  }, [sentence.length]);
+  }, [sentence]);
 
   return (
     <ContainerStyled>
-      {renderTitle}
+      <TitleStyled>
+        {sentence}
+        {showCursor && <CursorStyled>|</CursorStyled>}
+      </TitleStyled>
       <SubtitleStyled>Desenvolvedora Front-End</SubtitleStyled>
       <TextStyled>
         Estou em constante evolução. A cada projeto, descubro novas
         possibilidades e me desafio a criar soluções inovadoras e eficazes.
       </TextStyled>
+      <CustomButton as="a" href="https://www.google.com">
+        Download CV
+      </CustomButton>
     </ContainerStyled>
   );
 };
