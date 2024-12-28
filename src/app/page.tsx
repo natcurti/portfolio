@@ -5,6 +5,7 @@ import SkillsSection from "@/components/Sections/SkillsSection";
 import Projects from "@/components/Sections/Projects";
 import Contact from "@/components/Sections/Contact";
 import Footer from "@/components/Footer";
+import ButtonUp from "@/components/ButtonIcon/ButtonUp";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <ButtonUp />
     </>
   );
 }
