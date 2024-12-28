@@ -1,8 +1,8 @@
 /* COMPONENTS */
 
 interface IButtonIcon {
-  onClick: () => void;
   children: React.ReactNode;
+  onClick?: () => void;
   isMenuBtn?: boolean;
 }
 
@@ -32,6 +32,13 @@ interface IInput {
   name: string;
   id: string;
   isTextArea?: boolean;
+}
+
+interface IContactIcon {
+  icon: React.ReactNode;
+  title: string;
+  text: string;
+  href: string;
 }
 
 /* HOOKS */
