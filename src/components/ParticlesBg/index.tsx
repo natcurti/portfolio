@@ -72,8 +72,8 @@ const ParticlesBg = () => {
         number: {
           density: {
             enable: true,
-            width: 1000,
-            height: 1000,
+            width: 1100,
+            height: 1100,
           },
           value: 70,
         },

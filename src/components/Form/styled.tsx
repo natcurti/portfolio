@@ -33,6 +33,7 @@ export const TitleForm = styled.h4`
 
 export const TextForm = styled.p`
   font-size: 1.25rem;
+  margin-bottom: 1.5rem;
 
   @media (min-width: 768px) {
     font-size: 1.5rem;

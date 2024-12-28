@@ -2,14 +2,19 @@ import { InputStyled, LabelStyled, TextAreaStyled } from "./styled";
 
 const Input = ({ name, id, isTextArea }: IInput) => {
   return (
-    <LabelStyled htmlFor={id} $type={name}>
-      {name}:
+    <>
+      <LabelStyled htmlFor={id}>{name}</LabelStyled>
       {isTextArea ? (
-        <TextAreaStyled name={name} id={id} rows={7}></TextAreaStyled>
+        <TextAreaStyled
+          name={name}
+          id={id}
+          rows={7}
+          placeholder={name}
+        ></TextAreaStyled>
       ) : (
-        <InputStyled name={name} id={id} />
+        <InputStyled name={name} id={id} placeholder={name} $type={name} />
       )}
-    </LabelStyled>
+    </>
   );
 };
 
