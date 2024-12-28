@@ -13,8 +13,8 @@ const Form = () => {
     <FormStyled>
       <TitleForm>Me envie uma mensagem!</TitleForm>
       <TextForm>
-        Estou aberta para novas oportunidades e pronta para contribuir com seu
-        projeto.
+        Estou disponível para novos projetos e oportunidades. Entre em contato
+        comigo para marcarmos uma conversa.
       </TextForm>
       <ContainerInputName>
         <Input name="Nome" id="nome" />
