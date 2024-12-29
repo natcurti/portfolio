@@ -1,7 +1,7 @@
 "use client";
 import styled from "styled-components";
 import { ButtonStyled } from "../styled";
-import { bounce } from "@/components/animations/animations";
+import { bounce } from "@/components/Animations/animations";
 
 export const ButtonUpStyled = styled(ButtonStyled)`
   position: fixed;

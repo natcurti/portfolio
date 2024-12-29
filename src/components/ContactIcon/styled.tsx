@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import { fadeInAndTranslate } from "../animations/animations";
+import { fadeInAndTranslate } from "../Animations/animations";
 
 export const ContainerLink = styled.a`
   display: flex;

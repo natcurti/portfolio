@@ -6,7 +6,7 @@ export const LabelStyled = styled.label`
   position: absolute;
 `;
 
-export const InputStyled = styled.input<{ $type?: string }>`
+export const InputStyled = styled.input`
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: 0.25rem;
@@ -15,12 +15,9 @@ export const InputStyled = styled.input<{ $type?: string }>`
   font-family: var(--font-quicksand);
   color: var(--white);
   width: 100%;
-  margin-bottom: 1rem;
 
   @media (min-width: 768px) {
     font-size: 1.5rem;
-    width: ${(props) =>
-      props.$type === "Nome" || props.$type === "Sobrenome" ? "48%" : "100%"};
   }
 
   &:focus {
@@ -38,6 +35,7 @@ export const TextAreaStyled = styled.textarea`
   font-family: var(--font-quicksand);
   color: var(--white);
   resize: none;
+  width: 100%;
 
   @media (min-width: 768px) {
     font-size: 1.5rem;

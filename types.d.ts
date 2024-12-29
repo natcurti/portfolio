@@ -35,12 +35,6 @@ interface INavBar {
   headerRef: React.RefObject<HTMLHeadingElement | null>;
 }
 
-interface IInput {
-  name: string;
-  id: string;
-  isTextArea?: boolean;
-}
-
 interface IContactIcon {
   icon: React.ReactNode;
   title: string;

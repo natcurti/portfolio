@@ -1,18 +1,31 @@
+import { FieldValues, Path, UseFormRegister } from "react-hook-form";
 import { InputStyled, LabelStyled, TextAreaStyled } from "./styled";
 
-const Input = ({ name, id, isTextArea }: IInput) => {
+interface IInput<T extends FieldValues> {
+  register: UseFormRegister<T>;
+  name: Path<T>;
+  placeholder: string;
+  isTextArea?: boolean;
+}
+
+const Input = <T extends FieldValues>({
+  register,
+  name,
+  placeholder,
+  isTextArea,
+}: IInput<T>) => {
   return (
     <>
-      <LabelStyled htmlFor={id}>{name}</LabelStyled>
+      <LabelStyled htmlFor={name}>{name}</LabelStyled>
       {isTextArea ? (
         <TextAreaStyled
-          name={name}
-          id={id}
+          {...register(name)}
+          id={name}
           rows={7}
-          placeholder={name}
+          placeholder={placeholder}
         ></TextAreaStyled>
       ) : (
-        <InputStyled name={name} id={id} placeholder={name} $type={name} />
+        <InputStyled {...register(name)} id={name} placeholder={placeholder} />
       )}
     </>
   );

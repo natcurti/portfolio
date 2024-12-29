@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import { fadeInAndTranslate } from "../animations/animations";
+import { fadeInAndTranslate } from "../Animations/animations";
 
 export const FormStyled = styled.form`
   width: 100%;
@@ -46,7 +46,7 @@ export const ContainerInputName = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    justify-content: space-between;
+    gap: 1rem;
   }
 `;
 
