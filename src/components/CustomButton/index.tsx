@@ -3,13 +3,16 @@ import { ButtonStyled, ContainerStyled, LinkStyled } from "./styled";
 const CustomButton = ({
   as = "button",
   href,
-  onClick,
+  type,
+  disabled,
   children,
 }: ICustomButton) => {
   return (
     <ContainerStyled>
       {as === "button" ? (
-        <ButtonStyled onClick={onClick}>{children}</ButtonStyled>
+        <ButtonStyled type={type} disabled={disabled}>
+          {children}
+        </ButtonStyled>
       ) : (
         <LinkStyled href={href} target="_blank">
           {children}

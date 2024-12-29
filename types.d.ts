@@ -13,7 +13,8 @@ interface IButton {
 interface ICustomButton {
   as?: "button" | "a";
   href?: string;
-  onClick?: () => void;
+  type?: "button" | "submit";
+  disabled?: boolean;
   children: React.ReactNode;
 }
 

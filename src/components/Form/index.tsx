@@ -1,3 +1,4 @@
+"use client";
 import { useForm } from "react-hook-form";
 import CustomButton from "../CustomButton";
 import Input from "../Input";
@@ -10,8 +11,9 @@ import {
 } from "./styled";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ErrorMessage from "../ErrorMessage";
+import { useSubmit } from "@formspree/react";
 
 const schema = z.object({
   name: z.string().min(3, "Digite um nome válido"),
@@ -27,7 +29,8 @@ const Form = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitSuccessful },
+    setError,
+    formState: { errors, isSubmitSuccessful, isSubmitting },
   } = useForm<FormValues>({
     defaultValues: {
       name: "",
@@ -39,18 +42,37 @@ const Form = () => {
     resolver: zodResolver(schema),
   });
 
-  const submitForm = (values: FormValues) => {
-    console.log(values);
-  };
+  const [successMessage, setSuccessMessage] = useState<string>("");
+
+  const submit = useSubmit<FormValues>("mrbbknvk", {
+    onError(err) {
+      const errors = err.getFormErrors();
+      if (errors) {
+        setError("root", {
+          type: "Error",
+          message: "Erro ao submeter formulário.",
+        });
+      }
+    },
+  });
 
   useEffect(() => {
     if (isSubmitSuccessful) {
       reset();
+      setSuccessMessage("Mensagem enviada! Retornarei o mais breve possível.");
     }
   }, [isSubmitSuccessful, reset]);
 
+  useEffect(() => {
+    if (successMessage) {
+      setTimeout(() => {
+        setSuccessMessage("");
+      }, 5000);
+    }
+  }, [successMessage]);
+
   return (
-    <FormStyled onSubmit={handleSubmit(submitForm)}>
+    <FormStyled onSubmit={handleSubmit(submit)}>
       <TitleForm>Me envie uma mensagem!</TitleForm>
       <TextForm>
         Estou disponível para novos projetos e oportunidades. Entre em contato
@@ -87,8 +109,16 @@ const Form = () => {
           <ErrorMessage>{errors.message.message}</ErrorMessage>
         )}
       </div>
+      <div>
+        {errors?.root?.message && (
+          <ErrorMessage>{errors.root.message}</ErrorMessage>
+        )}
+      </div>
+      {successMessage && <p>{successMessage}</p>}
       <ContainerButton>
-        <CustomButton as="button">Enviar</CustomButton>
+        <CustomButton as="button" type="submit" disabled={isSubmitting}>
+          Enviar
+        </CustomButton>
       </ContainerButton>
     </FormStyled>
   );
