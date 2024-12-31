@@ -37,7 +37,14 @@ const ProjectCard = ({
       <ContainerColorful>
         <Link href={linkApp} target="_blank">
           <ContainerImg $position={position}>
-            <Image src={imgSrc} alt={`Screenshot do projeto ${title}`} fill />
+            <Image
+              src={imgSrc}
+              alt={`Screenshot do projeto ${title}`}
+              fill
+              sizes="(max-width: 992px) 80vw, 60vw"
+              placeholder="blur"
+              blurDataURL={imgSrc}
+            />
           </ContainerImg>
         </Link>
       </ContainerColorful>

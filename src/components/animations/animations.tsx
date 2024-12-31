@@ -33,3 +33,14 @@ export const bounce = keyframes`
     transform: scale(1);
   }
 `;
+
+export const animateBorderHeight = keyframes`
+  from {
+    height: 3px;
+  }
+
+  to {
+    height: 100%;
+  }
+
+`;

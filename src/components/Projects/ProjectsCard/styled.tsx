@@ -1,16 +1,6 @@
 "use client";
-import styled, { keyframes } from "styled-components";
-
-const animateBorderBottom = keyframes`
-  from {
-    height: 3px;
-  }
-
-  to {
-    height: 100%;
-  }
-
-`;
+import { animateBorderHeight } from "@/components/Animations/animations";
+import styled from "styled-components";
 
 export const SectionProject = styled.section<{ $position: string }>`
   margin: 2rem 0;
@@ -107,7 +97,7 @@ export const LinksProject = styled.span`
   }
 
   &:hover::after {
-    animation: ${animateBorderBottom} 0.5s forwards;
+    animation: ${animateBorderHeight} 0.5s forwards;
   }
 `;
 

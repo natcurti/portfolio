@@ -1,16 +1,11 @@
 "use client";
 import useShowAnimation from "@/hooks/useShowAnimation";
-import {
-  InnerContainer,
-  SectionStyled,
-  TitleSection,
-  UnderlineDetail,
-} from "../sharedStyles";
 import useGenericRef from "@/hooks/useGenericRef";
-import ProjectCard from "./ProjectCard";
-import { ContainerProjects } from "./styled";
+import { ContainerProjects, SectionStyled } from "./styled";
 import { useRefContext } from "@/context/SectionRefsContext";
 import { useEffect } from "react";
+import TitleSection from "../TitleSection";
+import ProjectCard from "./ProjectsCard";
 
 const projectsToShow = [
   {
@@ -65,18 +60,17 @@ const Projects = () => {
   }, [registerRef, ref]);
 
   return (
-    <SectionStyled id="projects" $sectionType="projects" ref={ref}>
-      <InnerContainer>
-        <TitleSection $showAnimation={showAnimation}>
-          Projetos
-          <UnderlineDetail></UnderlineDetail>
-        </TitleSection>
-        <ContainerProjects>
-          {projectsToShow.map((project) => {
-            return <ProjectCard key={project.title} {...project} />;
-          })}
-        </ContainerProjects>
-      </InnerContainer>
+    <SectionStyled id="projects" ref={ref}>
+      {showAnimation && (
+        <>
+          <TitleSection title="Projetos" />
+          <ContainerProjects>
+            {projectsToShow.map((project) => {
+              return <ProjectCard key={project.title} {...project} />;
+            })}
+          </ContainerProjects>
+        </>
+      )}
     </SectionStyled>
   );
 };

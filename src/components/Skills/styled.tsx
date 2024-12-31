@@ -8,6 +8,8 @@ export const SectionStyled = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  position: relative;
+  z-index: 1;
 
   @media (min-width: 768px) {
     padding: 4rem;
