@@ -2,16 +2,12 @@
 import styled from "styled-components";
 
 export const ContainerStyled = styled.div`
-  width: 75%;
   background: linear-gradient(to right, #2954a3, #c961de);
   border-radius: 2rem;
   position: relative;
   display: grid;
   place-items: center;
-
-  @media (min-width: 768px) {
-    width: 40%;
-  }
+  width: max-content;
 
   &::after {
     content: "";
@@ -44,7 +40,7 @@ export const ButtonStyled = styled.button`
   background-color: transparent;
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  padding: 1rem 4rem;
   border: none;
 `;
 
@@ -59,5 +55,5 @@ export const LinkStyled = styled.a`
   background-color: transparent;
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  padding: 1rem 3rem;
 `;
