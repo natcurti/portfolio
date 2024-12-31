@@ -13,6 +13,15 @@ export const fadeInAndTranslate = keyframes`
 
 `;
 
+export const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1
+  }
+`;
+
 export const bounce = keyframes`
   0% {
     transform: scale(1);

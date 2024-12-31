@@ -9,7 +9,7 @@ import {
 } from "./styled";
 import CustomButton from "../CustomButton";
 
-const Title = () => {
+const Intro = () => {
   const [sentence, setSentence] = useState("");
   const [showCursor, setShowCursor] = useState(true);
   const text = "Olá! Eu sou a Natalia";
@@ -51,4 +51,4 @@ const Title = () => {
   );
 };
 
-export default Title;
+export default Intro;

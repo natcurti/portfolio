@@ -43,6 +43,10 @@ interface IContactIcon {
   href: string;
 }
 
+interface ITitleSection {
+  title: string;
+}
+
 /* HOOKS */
 
 interface IUseShowAnimation<T extends HTMLElement> {
