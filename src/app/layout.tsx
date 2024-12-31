@@ -19,8 +19,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Natália Curti | Portfolio",
-  description: "",
+  title: "Natalia Curti | Portfolio",
+  description:
+    "Portfolio de Natalia Curti - Desenvolvedora Front-End com foco em React.js e Next.js",
 };
 
 export default function RootLayout({

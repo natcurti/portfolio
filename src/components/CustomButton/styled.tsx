@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const ContainerStyled = styled.div`
-  width: 50%;
+  width: 75%;
   background: linear-gradient(to right, #2954a3, #c961de);
   border-radius: 2rem;
   position: relative;

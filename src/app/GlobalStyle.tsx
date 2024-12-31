@@ -8,8 +8,6 @@ const GlobalStyle = createGlobalStyle`
         --medium-navy: #080d52;
         --light-navy: #2f2c79;
         --light-blue: #2954a3;
-        --pink: #ff69b4;
-        --light-pink: #ffa8d9;
         --white: #f0e7e7;
     }
 
