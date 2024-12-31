@@ -54,6 +54,11 @@ interface IUseShowAnimation<T extends HTMLElement> {
   options?: IIntersectionObserverOptions;
 }
 
+interface IUseShowOneAtATime {
+  array: ISkills[];
+  showAnimation: boolean;
+}
+
 /* CONTEXT */
 
 interface INavBarContext {
@@ -76,4 +81,9 @@ interface IIntersectionObserverOptions {
 
 interface IGenericRef<T extends HTMLElement> {
   current: T | null;
+}
+
+interface ISkills {
+  icon: React.ReactNode;
+  title: string;
 }

@@ -1,9 +1,9 @@
 "use client";
+import { fadeIn } from "@/components/Animations/animations";
 import styled from "styled-components";
-import { fadeIn } from "../../sharedStyles";
 
 export const ContainerOuter = styled.div`
-  animation: ${fadeIn} 5s forwards;
+  animation: ${fadeIn} 4s forwards;
 `;
 
 export const ContainerCard = styled.div`

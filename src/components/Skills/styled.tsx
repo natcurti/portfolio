@@ -1,6 +1,19 @@
 "use client";
 import styled from "styled-components";
 
+export const SectionStyled = styled.section`
+  padding: 2rem;
+  background-color: var(--darkest-navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    padding: 4rem;
+  }
+`;
+
 export const ContainerCards = styled.div`
   margin-top: 2rem;
   display: grid;
