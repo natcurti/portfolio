@@ -13,10 +13,11 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
-import { ContainerCards, SectionStyled } from "./styled";
+import { ContainerCards } from "./styled";
 import TitleSection from "../TitleSection";
 import useShowOneAtATime from "@/hooks/useShowOneAtATime";
 import SkillsCard from "./SkillsCard";
+import Section from "../Section";
 
 const array = [
   {
@@ -80,7 +81,7 @@ const Skills = () => {
   }, [registerRef, ref]);
 
   return (
-    <SectionStyled id="skills" ref={ref}>
+    <Section id="skills" ref={ref}>
       {showAnimation && (
         <>
           <TitleSection title="Habilidades" />
@@ -97,7 +98,7 @@ const Skills = () => {
           </ContainerCards>
         </>
       )}
-    </SectionStyled>
+    </Section>
   );
 };
 

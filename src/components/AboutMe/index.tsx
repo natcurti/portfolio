@@ -3,8 +3,9 @@ import { useRefContext } from "@/context/SectionRefsContext";
 import useGenericRef from "@/hooks/useGenericRef";
 import useShowAnimation from "@/hooks/useShowAnimation";
 import { useEffect } from "react";
-import { SectionStyled, TextStyled } from "./styled";
+import { TextStyled } from "./styled";
 import TitleSection from "../TitleSection";
+import Section from "../Section";
 
 const AboutMe = () => {
   const ref = useGenericRef<HTMLElement>();
@@ -16,7 +17,7 @@ const AboutMe = () => {
   }, [registerRef, ref]);
 
   return (
-    <SectionStyled id="aboutMe" ref={ref}>
+    <Section id="aboutMe" ref={ref}>
       {showAnimation && (
         <>
           <TitleSection title="Sobre mim" />
@@ -38,7 +39,7 @@ const AboutMe = () => {
           </TextStyled>
         </>
       )}
-    </SectionStyled>
+    </Section>
   );
 };
 

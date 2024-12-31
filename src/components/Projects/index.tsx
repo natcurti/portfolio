@@ -1,11 +1,12 @@
 "use client";
 import useShowAnimation from "@/hooks/useShowAnimation";
 import useGenericRef from "@/hooks/useGenericRef";
-import { ContainerProjects, SectionStyled } from "./styled";
+import { ContainerProjects } from "./styled";
 import { useRefContext } from "@/context/SectionRefsContext";
 import { useEffect } from "react";
 import TitleSection from "../TitleSection";
 import ProjectCard from "./ProjectsCard";
+import Section from "../Section";
 
 const projectsToShow = [
   {
@@ -60,7 +61,7 @@ const Projects = () => {
   }, [registerRef, ref]);
 
   return (
-    <SectionStyled id="projects" ref={ref}>
+    <Section id="projects" ref={ref}>
       {showAnimation && (
         <>
           <TitleSection title="Projetos" />
@@ -71,7 +72,7 @@ const Projects = () => {
           </ContainerProjects>
         </>
       )}
-    </SectionStyled>
+    </Section>
   );
 };
 

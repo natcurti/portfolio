@@ -2,19 +2,6 @@
 import styled from "styled-components";
 import { fadeInAndTranslate } from "../Animations/animations";
 
-export const SectionStyled = styled.section`
-  padding: 2rem;
-  background-color: var(--darkest-navy);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-
-  @media (min-width: 768px) {
-    padding: 4rem;
-  }
-`;
-
 export const TextStyled = styled.p`
   opacity: 0;
   font-size: 1.25rem;

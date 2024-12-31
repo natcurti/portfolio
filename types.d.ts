@@ -47,6 +47,11 @@ interface ITitleSection {
   title: string;
 }
 
+interface ISection {
+  id: string;
+  children: React.ReactNode;
+}
+
 /* HOOKS */
 
 interface IUseShowAnimation<T extends HTMLElement> {
@@ -55,7 +60,7 @@ interface IUseShowAnimation<T extends HTMLElement> {
 }
 
 interface IUseShowOneAtATime {
-  array: ISkills[];
+  array: ISkills[] | IContactTypes[];
   showAnimation: boolean;
 }
 
@@ -86,4 +91,11 @@ interface IGenericRef<T extends HTMLElement> {
 interface ISkills {
   icon: React.ReactNode;
   title: string;
+}
+
+interface IContactTypes {
+  icon: React.ReactNode;
+  title: string;
+  text: string;
+  href: string;
 }

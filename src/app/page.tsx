@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import Contact from "@/components/Sections/Contact";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ButtonUp from "@/components/ButtonIcon/ButtonUp";
 import HeroSection from "@/components/HeroSection";

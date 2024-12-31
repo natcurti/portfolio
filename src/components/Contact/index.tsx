@@ -1,22 +1,19 @@
 "use client";
 import useGenericRef from "@/hooks/useGenericRef";
-import {
-  InnerContainer,
-  SectionStyled,
-  TitleSection,
-  UnderlineDetail,
-} from "../sharedStyles";
 import useShowAnimation from "@/hooks/useShowAnimation";
 import { useRefContext } from "@/context/SectionRefsContext";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Form from "@/components/Form";
 import ContactIcon from "@/components/ContactIcon";
 import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { IoLogoGithub } from "react-icons/io5";
 import { ContainerFormAndIcons, ContainerIcons } from "./styled";
+import useShowOneAtATime from "@/hooks/useShowOneAtATime";
+import TitleSection from "../TitleSection";
+import Section from "../Section";
 
-const contactTypes = [
+const array = [
   {
     icon: <FaLinkedin size={50} color={"#FFF"} />,
     title: "LinkedIn",
@@ -45,45 +42,30 @@ const contactTypes = [
 
 const Contact = () => {
   const ref = useGenericRef<HTMLElement>();
-  const { showAnimation } = useShowAnimation<HTMLElement>({ ref });
   const { registerRef } = useRefContext();
-  const [contactToShow, setContactToShow] = useState<number>(0);
+  const { showAnimation } = useShowAnimation<HTMLElement>({ ref });
+  const { current } = useShowOneAtATime({ array, showAnimation });
 
   useEffect(() => {
     registerRef(ref as React.RefObject<HTMLElement>);
   }, [registerRef, ref]);
 
-  useEffect(() => {
-    if (showAnimation) {
-      const intervalId = setInterval(() => {
-        if (contactToShow < contactTypes.length) {
-          setContactToShow((prev) => prev + 1);
-        }
-      }, 500);
-
-      return () => clearInterval(intervalId);
-    }
-  }, [contactToShow, showAnimation]);
-
   return (
-    <SectionStyled $sectionType="contact" ref={ref} id="contact">
-      <InnerContainer>
-        <TitleSection $showAnimation={showAnimation}>
-          Contato
-          <UnderlineDetail></UnderlineDetail>
-        </TitleSection>
-        {showAnimation && (
+    <Section ref={ref} id="contact">
+      {showAnimation && (
+        <>
+          <TitleSection title="Contato" />
           <ContainerFormAndIcons>
             <Form />
             <ContainerIcons>
-              {contactTypes.slice(0, contactToShow + 1).map((type) => {
+              {array.slice(0, current + 1).map((type) => {
                 return <ContactIcon key={type.title} {...type} />;
               })}
             </ContainerIcons>
           </ContainerFormAndIcons>
-        )}
-      </InnerContainer>
-    </SectionStyled>
+        </>
+      )}
+    </Section>
   );
 };
 
