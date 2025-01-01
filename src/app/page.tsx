@@ -6,10 +6,11 @@ import HeroSection from "@/components/HeroSection";
 import AboutMe from "@/components/AboutMe";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import ContainerApp from "@/components/ContainerApp";
 
 export default function Home() {
   return (
-    <>
+    <ContainerApp>
       <Header />
       <main>
         <HeroSection />
@@ -20,6 +21,6 @@ export default function Home() {
       </main>
       <Footer />
       <ButtonUp />
-    </>
+    </ContainerApp>
   );
 }

@@ -23,7 +23,12 @@ const ParticlesBg = () => {
           value: "transparent",
         },
       },
-      fpsLimit: 90,
+      style: {
+        height: "700px",
+        width: "100%",
+        position: "relative",
+      },
+      fpsLimit: 75,
       interactivity: {
         events: {
           onClick: {

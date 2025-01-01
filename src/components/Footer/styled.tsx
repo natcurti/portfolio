@@ -10,6 +10,7 @@ export const FooterStyled = styled.footer`
   text-align: center;
   position: relative;
   z-index: 1;
+  margin-top: 5rem;
 
   p {
     width: 50%;
@@ -18,5 +19,9 @@ export const FooterStyled = styled.footer`
     @media (min-width: 768px) {
       width: 100%;
     }
+  }
+
+  @media (min-width: 2000px) {
+    background-color: transparent;
   }
 `;

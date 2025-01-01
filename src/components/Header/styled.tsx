@@ -8,6 +8,7 @@ export const HeaderStyled = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
+  max-width: 2000px;
 
   @media (min-width: 768px) {
     display: flex;
