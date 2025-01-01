@@ -27,7 +27,7 @@ export const bounce = keyframes`
     transform: scale(1);
   }
   50% {
-    transform: scale(1.5);
+    transform: scale(1.25);
   }
   100% {
     transform: scale(1);
@@ -43,4 +43,25 @@ export const animateBorderHeight = keyframes`
     height: 100%;
   }
 
+`;
+
+export const blink = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0
+  }
+`;
+
+export const underlineAnimation = keyframes`
+    0%{
+        width: 0;
+    }
+    50%{
+        width: 50%;
+    }
+    100%{
+        width: 100%;
+    }
 `;

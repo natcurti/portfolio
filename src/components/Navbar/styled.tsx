@@ -1,16 +1,5 @@
-import styled, { keyframes } from "styled-components";
-
-const underlineAnimation = keyframes`
-    0%{
-        width: 0;
-    }
-    50%{
-        width: 50%;
-    }
-    100%{
-        width: 100%;
-    }
-`;
+import styled from "styled-components";
+import { underlineAnimation } from "../Animations/animations";
 
 export const NavStyled = styled.nav<{ $isOpen: boolean }>`
   overflow: hidden;

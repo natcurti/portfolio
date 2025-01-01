@@ -1,14 +1,6 @@
 "use client";
-import styled, { keyframes } from "styled-components";
-
-const blink = keyframes`
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0
-  }
-`;
+import styled from "styled-components";
+import { blink } from "../Animations/animations";
 
 export const ContainerStyled = styled.div`
   padding: 1.5rem;

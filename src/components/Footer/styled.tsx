@@ -8,6 +8,8 @@ export const FooterStyled = styled.footer`
   display: grid;
   place-items: center;
   text-align: center;
+  position: relative;
+  z-index: 1;
 
   p {
     width: 50%;
