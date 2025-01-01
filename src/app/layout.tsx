@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   title: "Natalia Curti | Portfolio",
   description:
     "Portfolio de Natalia Curti - Desenvolvedora Front-End com foco em React.js e Next.js",
+  icons: {
+    icon: "/assets/favicon.png",
+  },
 };
 
 export default function RootLayout({

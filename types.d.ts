@@ -14,6 +14,7 @@ interface ICustomButton {
   as?: "button" | "a";
   href?: string;
   type?: "button" | "submit";
+  download?: string;
   disabled?: boolean;
   children: React.ReactNode;
 }

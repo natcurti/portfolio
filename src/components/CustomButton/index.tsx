@@ -5,6 +5,7 @@ const CustomButton = ({
   href,
   type,
   disabled,
+  download,
   children,
 }: ICustomButton) => {
   return (
@@ -14,7 +15,7 @@ const CustomButton = ({
           {children}
         </ButtonStyled>
       ) : (
-        <LinkStyled href={href} target="_blank">
+        <LinkStyled href={href} target="_blank" download={download}>
           {children}
         </LinkStyled>
       )}

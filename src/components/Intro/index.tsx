@@ -44,7 +44,11 @@ const Intro = () => {
         Estou em constante evolução. A cada projeto, descubro novas
         possibilidades e me desafio a criar soluções inovadoras e eficazes.
       </TextStyled>
-      <CustomButton as="a" href="https://www.google.com">
+      <CustomButton
+        as="a"
+        href="/assets/cv-natalia-curti.pdf"
+        download="cv-natalia-curti.pdf"
+      >
         Download CV
       </CustomButton>
     </ContainerStyled>
