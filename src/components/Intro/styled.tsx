@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import { blink } from "../Animations/animations";
+import { blink } from "@/components/Animations/animations";
 
 export const ContainerStyled = styled.div`
   padding: 1.5rem;

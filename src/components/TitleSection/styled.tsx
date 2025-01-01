@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import { fadeIn } from "../Animations/animations";
+import { fadeIn } from "@/components/Animations/animations";
 
 export const TitleStyled = styled.h3`
   width: max-content;

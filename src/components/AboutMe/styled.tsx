@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import { fadeInAndTranslate } from "../Animations/animations";
+import { fadeInAndTranslate } from "@/components/Animations/animations";
 
 export const TextStyled = styled.p`
   opacity: 0;
