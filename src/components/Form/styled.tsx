@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import { fadeInAndTranslate } from "@/components/Animations/animations";
+import { fadeInAndTranslate } from "@/components/Animations";
 
 export const FormStyled = styled.form`
   width: 100%;

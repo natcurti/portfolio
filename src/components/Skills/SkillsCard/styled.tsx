@@ -1,5 +1,5 @@
 "use client";
-import { fadeIn } from "@/components/Animations/animations";
+import { fadeIn } from "@/components/Animations";
 import styled from "styled-components";
 
 export const ContainerOuter = styled.div`

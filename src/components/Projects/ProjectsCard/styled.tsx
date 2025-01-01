@@ -1,5 +1,5 @@
 "use client";
-import { animateBorderHeight } from "@/components/Animations/animations";
+import { animateBorderHeight } from "@/components/Animations";
 import styled from "styled-components";
 
 export const SectionProject = styled.section<{ $position: string }>`

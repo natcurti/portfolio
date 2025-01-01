@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { underlineAnimation } from "@/components/Animations/animations";
+import { underlineAnimation } from "@/components/Animations";
 
 export const NavStyled = styled.nav<{ $isOpen: boolean }>`
   overflow: hidden;
